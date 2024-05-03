@@ -5,6 +5,11 @@ FROM condaforge/miniforge3:latest
 #     apt remove python3-pip && \
 #     rm -rf /var/lib/apt/lists/*
 
+RUN conda update -y conda && \
+    conda init bash && \
+    conda install --yes numpy scipy matplotlib && \
+    conda clean -afy
+
 # install pip packages 
 # RUN pip install dymos && \
 #     conda clean -afy && \
