@@ -1,16 +1,26 @@
 {
-    "name": "Project name here",
+    "name": "Python project template",
     "build": {
         "context": ".",
         "dockerfile": "Dockerfile"
     },
+	"forwardPorts": [8888],
+	"portsAttributes": {
+		"8888": {
+			"label": "Jupyter",
+			"requireLocalPort": true,
+			"onAutoForward": "ignore"
+		}
+	},
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
                 "ms-azuretools.vscode-docker",
-                "github.codespaces"
+                "github.codespaces",
+                "ms-toolsai.jupyter"
             ]
         }
-    },
+    }
+    // "runArgs": ["--env-file",".devcontainer/devcontainer.env"]
 }

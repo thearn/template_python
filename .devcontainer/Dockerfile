@@ -7,7 +7,7 @@ FROM condaforge/miniforge3:latest
 
 RUN conda update -y conda && \
     conda init bash && \
-    conda install --yes numpy scipy matplotlib && \
+    conda install --yes numpy scipy matplotlib notebook && \
     conda clean -afy
 
 # install pip packages 
